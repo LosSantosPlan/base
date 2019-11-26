@@ -9,7 +9,7 @@ public class HelloWorldController {
 
     @GetMapping("/lxb")
     public String pring(){
-      return   "你好，雷小表";
+      return   "你好，雷小小小小小小表";
     }
 
     @GetMapping("findOne")
