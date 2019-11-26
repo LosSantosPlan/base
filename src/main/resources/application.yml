@@ -1,2 +1,6 @@
 server:
   port: 8088
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml #对应你的mapper.xml映射文件
+  type-aliases-package: com.springboot.Entity.Person #对应实体类
