@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.io.IOException;
 import java.util.List;
 
-@Repository
+@Mapper
 public interface PersonDao {
-    List FindAll();
+    String FindAll();
     Person FindPersonById(int id);
 }

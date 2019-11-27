@@ -25,9 +25,8 @@ public class HelloWorldController {
         return null;
     }
     @GetMapping("/findAll")
-    public List<Person> FindAll(){
-        List<Person> list=personServices.FindAll();
-        return list;
+    public String FindAll(){
+        return personServices.FindAll();
 
     }
 }

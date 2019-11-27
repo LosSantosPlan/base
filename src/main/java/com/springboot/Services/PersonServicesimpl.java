@@ -14,7 +14,7 @@ public class PersonServicesimpl implements PersonServices{
     @Autowired
     private PersonDao personDao;
     @Override
-    public List FindAll() {
+    public String FindAll() {
         return personDao.FindAll();
     }
 

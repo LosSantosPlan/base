@@ -6,6 +6,6 @@ import java.io.IOException;
 import java.util.List;
 
 public interface PersonServices {
-    List FindAll();
+    String FindAll();
     Person FindPersonById(int id);
 }
