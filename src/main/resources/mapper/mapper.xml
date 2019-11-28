@@ -9,7 +9,7 @@
             select * from springboot where id=#{id};
     </select>
 
-    <select id="findAll" resultType="Map">
+    <select id="findAll" >
             select * from springboot
     </select>
     <update id="UpdateSalary" parameterType="Integer" >

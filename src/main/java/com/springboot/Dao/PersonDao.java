@@ -7,8 +7,12 @@ import org.springframework.stereotype.Repository;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * @author 23696
+ */
 @Repository
 public interface PersonDao {
+
     List findAll();
 
     Person findPersonById(int id);
