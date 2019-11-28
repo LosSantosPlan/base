@@ -25,7 +25,6 @@ public class HelloWorldController {
 
         return null;
     }
-
     @GetMapping("/findAll")
     public List<Person> findAll() {
         return  personServices.findAll();
