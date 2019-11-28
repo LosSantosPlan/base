@@ -20,12 +20,12 @@ public class HelloWorldController {
         return "你好，雷小小小小小小表";
     }
 
-    @GetMapping("/findOne")
+    @PostMapping("/findOne")
     public String findPersonById() {
 
         return null;
     }
-    @GetMapping("/findAll")
+    @PostMapping("/findAll")
     public List<Person> findAll() {
         return  personServices.findAll();
 
