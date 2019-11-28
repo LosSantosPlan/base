@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface PersonDao {
-    List FindAll();
-    Person FindPersonById(int id);
+    List findAll();
+
+    Person findPersonById(int id);
 }

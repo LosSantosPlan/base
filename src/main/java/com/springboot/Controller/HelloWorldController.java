@@ -13,21 +13,22 @@ import java.util.List;
 public class HelloWorldController {
     @Autowired
     private PersonServices personServices;
-    @GetMapping("/lxb")
-    public String pring(){
 
-      return   "你好，雷小小小小小小表";
+    @GetMapping("/lxb")
+    public String pring() {
+
+        return "你好，雷小小小小小小表";
     }
 
     @GetMapping("/findOne")
-    public String FindPersonById(){
+    public String findPersonById() {
 
         return null;
     }
+
     @GetMapping("/findAll")
-    public List<Person> FindAll(){
-        List<Person> list=personServices.FindAll();
-        return list;
+    public List<Person> findAll() {
+        return  personServices.findAll();
 
     }
 }

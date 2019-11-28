@@ -6,6 +6,16 @@ import java.io.IOException;
 import java.util.List;
 
 public interface PersonServices {
-    List FindAll();
-    Person FindPersonById(int id);
+    /**
+     * 查找所有Person
+     * @return
+     */
+    List<Person> findAll();
+
+    /**
+     * 根据id查找Person
+     * @param id
+     * @return
+     */
+    Person findPersonById(int id);
 }

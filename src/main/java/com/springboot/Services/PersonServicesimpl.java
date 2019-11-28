@@ -10,16 +10,17 @@ import java.io.IOException;
 import java.util.List;
 
 @Service
-public class PersonServicesimpl implements PersonServices{
+public class PersonServicesimpl implements PersonServices {
     @Autowired
     private PersonDao personDao;
+
     @Override
-    public List FindAll() {
-        return personDao.FindAll();
+    public List findAll() {
+        return personDao.findAll();
     }
 
     @Override
-    public Person FindPersonById(int id) {
-        return personDao.FindPersonById(id);
+    public Person findPersonById(int id) {
+        return personDao.findPersonById(id);
     }
 }
