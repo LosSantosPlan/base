@@ -1,0 +1,10 @@
+mybatis:
+  mapper-locations: classpath:mapper/*.xml #对应你的mapper.xml映射文件
+  type-aliases-package: com.springboot.Entity #对应实体类
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/llbAndyxb?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: system
+    driver-class-name: com.mysql.cj.jdbc.Driver
