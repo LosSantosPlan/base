@@ -9,6 +9,9 @@ import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * service实现类
+ */
 @Service
 public class PersonServicesimpl implements PersonServices {
     @Resource
@@ -22,5 +25,10 @@ public class PersonServicesimpl implements PersonServices {
     @Override
     public Person findPersonById(int id) {
         return personDao.findPersonById(id);
+    }
+
+    @Override
+    public void insertPersonList(List<Person> list) {
+        personDao.insertPersonList(list);
     }
 }

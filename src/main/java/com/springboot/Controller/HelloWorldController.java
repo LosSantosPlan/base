@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -37,5 +38,16 @@ public class HelloWorldController {
     public List<Person> findAll() {
         return  personServices.findAll();
 
+    }
+
+    @GetMapping("/insert")
+    public String insertPersonList(){
+        Person p=new Person("小白",18,1800);
+        Person p2=new Person("小黑",19,1900);
+        List<Person> list =new ArrayList<>();
+        list.add(p);
+        list.add(p2);
+        personServices.insertPersonList(list);
+        return null;
     }
 }

@@ -6,6 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
+/**
+ * @author 23696
+ */
 @SpringBootApplication
 @MapperScan("com.springboot.Dao")
 public class BaseApplication {

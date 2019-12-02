@@ -18,4 +18,10 @@ public interface PersonServices {
      * @return
      */
     Person findPersonById(int id);
+
+    /**
+     * 批量插入
+     *
+     * */
+    void insertPersonList(List<Person> list);
 }
