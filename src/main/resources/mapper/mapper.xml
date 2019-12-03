@@ -9,7 +9,7 @@
             select * from springboot where id=#{id};
     </select>
 
-    <select id="findAll" resultType="Map" >
+    <select id="findAll" resultType="com.springboot.Entity.Person">
             select * from springboot
     </select>
     <update id="UpdateSalary" parameterType="Integer" >
@@ -21,4 +21,13 @@
         end
         where age in (23,24,26)
     </update>
+
+    <insert id="insertPersonList" >
+        insert into springboot(name,age,salary)
+        values
+        <foreach collection="list" item="item" separator =",">
+            (#{item.name},#{item.age},#{item.salary})
+        </foreach>
+
+    </insert>
 </mapper>

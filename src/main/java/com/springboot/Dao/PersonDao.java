@@ -12,8 +12,22 @@ import java.util.List;
  */
 @Repository
 public interface PersonDao {
+   /**
+    *查找所有Person
+    */
+    List<Person> findAll();
 
-    List findAll();
-
+    /**
+     * @param id
+     * @return
+     */
     Person findPersonById(int id);
+
+    /**
+     * @param list
+     * 批处理插入
+     */
+    void insertPersonList(List<Person> list);
+
+
 }
