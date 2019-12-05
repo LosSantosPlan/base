@@ -29,5 +29,7 @@ public interface PersonDao {
      */
     void insertPersonList(List<Person> list);
 
+    void updatePersonList(List<Person> list);
+
 
 }

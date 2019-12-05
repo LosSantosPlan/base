@@ -12,14 +12,13 @@
     <select id="findAll" resultType="com.springboot.Entity.Person">
             select * from springboot
     </select>
-    <update id="UpdateSalary" parameterType="Integer" >
-        update springboot set
-        salary=case age
-        when 23 then 2000
-        when 24 then 2100
-        when 26 then 2200
-        end
-        where age in (23,24,26)
+    <update id="updatePersonList" >
+        update springboot
+        <foreach collection="list" item="updateItem" separator =",">
+               set name=#{updateItem.name},salary=#{updateItem.salary}
+               where age=#{updateItem.age}
+        </foreach>
+
     </update>
 
     <insert id="insertPersonList" >
@@ -28,6 +27,6 @@
         <foreach collection="list" item="item" separator =",">
             (#{item.name},#{item.age},#{item.salary})
         </foreach>
-
     </insert>
+
 </mapper>
