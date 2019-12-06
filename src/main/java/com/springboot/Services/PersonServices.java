@@ -24,4 +24,6 @@ public interface PersonServices {
      *
      * */
     void insertPersonList(List<Person> list);
+
+    void updatePersonList(List<Person> list);
 }

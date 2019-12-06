@@ -31,4 +31,9 @@ public class PersonServicesimpl implements PersonServices {
     public void insertPersonList(List<Person> list) {
         personDao.insertPersonList(list);
     }
+
+    @Override
+    public void updatePersonList(List<Person> list) {
+        personDao.updatePersonList(list);
+    }
 }
