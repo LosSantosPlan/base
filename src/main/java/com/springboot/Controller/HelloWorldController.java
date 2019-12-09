@@ -3,10 +3,7 @@ package com.springboot.Controller;
 import com.springboot.Entity.Person;
 import com.springboot.Services.PersonServices;
 import com.springboot.Utils.ExcelUtils;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -15,11 +12,9 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author sheep
@@ -34,6 +29,7 @@ public class HelloWorldController {
 
     @ApiOperation(value = "问好")
     @GetMapping("/lxb")
+    @ResponseBody
     public String pring() {
 
         return "你好，雷小小小小小小表";
@@ -87,26 +83,30 @@ public class HelloWorldController {
         return "show";
     }
 
-    ExcelUtils excelUtils=new ExcelUtils();
 
+
+    /**
+     * @param request 客户端请求
+     */
     @ApiOperation(value = "Excel解析")
-    @PostMapping("/upload")
+    @PostMapping(value = "/upload")
     @ResponseBody
     public String getExcel(HttpServletRequest request) throws Exception{
         MultipartHttpServletRequest multipartrequest= (MultipartHttpServletRequest) request;
+        //按照name属性来获取
         MultipartFile file =multipartrequest.getFile("filename");
         if (file.isEmpty()){
             return "文件不能为空";
         }
+        ExcelUtils excelUtils=new ExcelUtils();
         InputStream inputStream=file.getInputStream();
-        List<List<Object>> list = excelUtils.analyzeExcel(inputStream, file.getOriginalFilename());
+        List<Person> finalList = excelUtils.analyzeExcel(inputStream, file.getOriginalFilename());
         inputStream.close();
-        for (int i = 0; i < list.size(); i++) {
-            List<Object> lo = list.get(i);
-            //TODO 随意发挥
-            System.out.println(lo);
-
+        for (int i = 0; i < finalList.size(); i++) {
+            Person p=finalList.get(i);
+            System.out.println(p.getName()+" "+p.getAge()+" "+p.getSalary());
         }
+         personServices.insertPersonList(finalList);
          return "上传成功";
     }
 }

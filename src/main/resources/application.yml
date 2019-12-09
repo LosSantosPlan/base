@@ -4,4 +4,4 @@ server:
 spring:
   profiles:
     ## 修改为 lxb 切换到 application-lxb.yml配置
-    active: test
+    active: lxb
